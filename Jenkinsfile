@@ -14,12 +14,17 @@ pipeline{
           sh 'g++ sample.cpp -o output'
         }
     }
-    stage('Deploy') {
+    stage('Test')
+    {
+      steps{
+        echo '
+}
+      stage('Deploy') {
         steps {
             echo 'deploy'
         }
     }
-}
+    }
 post{
   failure{
     error 'Pipeline failed'
